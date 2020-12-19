@@ -34,11 +34,12 @@
     margin-bottom: 30px;
     text-align: center;
     animation-name: moveInLeft;
-    animation-duration:2s;
+    animation-duration: 2s;
     /* animation-delay:1s;
     animation-duration: 3; */
     animation-timing-function: ease-in;
-    text-shadow:4px 3px 0 black;
+    text-shadow: 4px 3px 0 black;
+
 }
 
 .heading-primary-secondary {
@@ -48,53 +49,87 @@
     letter-spacing: 15px;
     text-align: center;
     animation-name: delaDroite;
-    animation-duration:2s;
-    animation-timing-function:ease-in;
-    text-shadow:4px 3px 0 black;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    text-shadow: 4px 3px 0 black;
+    margin-bottom: 60px;
 
 }
 
-.text-box{
+.text-box {
     position: absolute;
     left: 50%;
     top: 40%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-@keyframes moveInLeft{
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform:translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0,.4);
+}
+
+.btn:active {
+    transform:translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0,.4); 
+}
+
+
+
+.btn-white {
+    background-color: #ffffff;
+    color: #020024;
+    text-align: center;
+}
+
+
+/* Keyframe */
+@keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform:translateX(-100px);
+        transform: translateX(-100px);
 
 
     }
 
     80% {
-        transform:translateX(10px);
+        transform: translateX(10px);
 
     }
+
     100% {
         opacity: 1;
-        transform:translateX(0px);
-        text-shadow:4px 3px 0 black;
+        transform: translateX(0px);
+        text-shadow: 4px 3px 0 black;
 
     }
 }
 
-@keyframes delaDroite{
+@keyframes delaDroite {
     0% {
         opacity: 0;
-        transform:translateX(100px);
+        transform: translateX(100px);
     }
 
     80% {
-        transform:translateX(-10px);
+        transform: translateX(-10px);
 
     }
+
     100% {
         opacity: 1;
-        transform:translateX(0px);
-    text-shadow:4px 3px 0 black;
+        transform: translateX(0px);
+        text-shadow: 4px 3px 0 black;
 
 
     }
