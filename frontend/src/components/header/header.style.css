@@ -10,7 +10,8 @@
 }
 
 .logo {
-    height: 40px;
+    height: 60px;
+    color: white !important;
 }
 
 .logo-box {
