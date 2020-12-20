@@ -13,10 +13,16 @@ colors:
 
 }
 
+/* declaration puis on joue avec les rems ex.... */
+html{
+  font-size: 10px
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
-  font-size:16 px;
+  /* font-size:16 px; */
+  /* font-size: 1.6 rem; */
   line-height:1.7;
   color: rgb(8, 8, 8)
 }

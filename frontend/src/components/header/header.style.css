@@ -10,14 +10,13 @@
 }
 
 .logo {
-    height: 60px;
-    color: white !important;
+    color: white;
 }
 
 .logo-box {
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 5rem;
+    left: 5rem;
 }
 
 .heading-primary {
@@ -29,10 +28,10 @@
 
 .heading-primary-main {
     display: block;
-    font-size: 35px;
+    font-size: 3.5rem;
     font-weight: 400;
-    letter-spacing: 30px;
-    margin-bottom: 30px;
+    letter-spacing: 2.5rem;
+    margin-bottom: 2.5rem;
     text-align: center;
     animation-name: moveInLeft;
     animation-duration: 2s;
@@ -45,9 +44,9 @@
 
 .heading-primary-secondary {
     display: block;
-    font-size: 25px;
+    font-size: 2.5rem;
     font-weight: 400;
-    letter-spacing: 15px;
+    letter-spacing: 1.5rem;
     text-align: center;
     animation-name: delaDroite;
     animation-duration: 2s;
@@ -67,11 +66,12 @@
 
 .btn:link,
 .btn:visited {
+    font-size: 1.6rem;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s;
     position: relative;
 
@@ -79,12 +79,12 @@
 
 .btn:hover {
     transform:translateY(-3px);
-    box-shadow: 0 20px 30px rgba(0, 0, 0,.4);
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0,.4);
 }
 
 .btn:active {
     transform:translateY(-1px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0,.4); 
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0,.4); 
 }
 
 
@@ -100,7 +100,7 @@
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -131,13 +131,13 @@
 @keyframes moveInLeft {
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
 
 
     }
 
     80% {
-        transform: translateX(10px);
+        transform: translateX(1rem);
 
     }
 
@@ -152,11 +152,11 @@
 @keyframes delaDroite {
     0% {
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     80% {
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
 
     }
 
@@ -173,11 +173,11 @@
 @keyframes fromBottom {
     0% {
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateY(10rem);
     }
 
     80% {
-        transform: translateY(-10px);
+        transform: translateY(-1rem);
 
     }
 
