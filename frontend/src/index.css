@@ -6,16 +6,20 @@ colors:
 
  */
 
-*{
+*,
+*::after,
+*::before{
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
+  box-sizing: inherit;
+
 
 }
 
-/* declaration puis on joue avec les rems ex.... */
+/* 16px by default,  declaration puis on joue avec les rems ex.... */
 html{
-  font-size: 10px
+  /* font-size: 10px; */
+  font-size: 62.5%;
 }
 
 body {
@@ -25,5 +29,6 @@ body {
   /* font-size: 1.6 rem; */
   line-height:1.7;
   color: rgb(8, 8, 8)
+  box-sizing: border-box;
 }
 
