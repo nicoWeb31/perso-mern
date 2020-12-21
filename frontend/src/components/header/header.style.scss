@@ -1,3 +1,5 @@
+$c-primary: #020024;
+
 .header {
     height: 90vh;
     background-image: linear-gradient(96deg, rgba(2, 0, 36, 0.6) 0%, rgba(18, 18, 92, 0.6) 35%, rgba(29, 147, 171, 0.6) 100%),
@@ -91,7 +93,7 @@
 
 .btn-white {
     background-color: #ffffff;
-    color: #020024;
+    color: $c-primary;
     text-align: center;
 }
 

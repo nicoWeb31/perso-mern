@@ -1,0 +1,35 @@
+/*
+colors:
+#020024
+#12125c
+#1d93ab
+
+ */
+
+$c-primary: #020024;
+$c-secondary:#12125c;
+$c-tertiary: #1d93ab;
+
+*,
+*::after,
+*::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+/* 16px by default,  declaration puis on joue avec les rems ex.... */
+html {
+    /* font-size: 10px; */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    /* font-size:16 px; */
+    /* font-size: 1.6 rem; */
+    line-height: 1.7;
+    color: rgb(8, 8, 8);
+    box-sizing: border-box;
+}
