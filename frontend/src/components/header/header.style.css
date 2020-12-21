@@ -1,6 +1,6 @@
 .header {
     height: 90vh;
-    background-image: linear-gradient(96deg, rgba(2, 0, 36, 0.5) 0%, rgba(18, 18, 92, 0.5) 35%, rgba(29, 147, 171, 0.5) 100%),
+    background-image: linear-gradient(96deg, rgba(2, 0, 36, 0.6) 0%, rgba(18, 18, 92, 0.6) 35%, rgba(29, 147, 171, 0.6) 100%),
         url('../../img/imgcover.jpg');
     background-size: cover;
     background-position: top;
