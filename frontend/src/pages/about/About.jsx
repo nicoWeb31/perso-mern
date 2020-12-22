@@ -9,7 +9,7 @@ const About = () => {
     return (
         <div className="about">
             <div className="u-center-text u-margin-bottom-big">
-                <h2 className="about--title">Développeur web Mern Stack</h2>
+                <h2 className="heading-secondary">Développeur web Mern Stack</h2>
             </div>
             <div className="row ">
                 <div className="col-md-6 col-12 u-padding-big">
