@@ -7,18 +7,18 @@ const Header = () => {
     return (
         <Router>
             <header className="header">
-                <div className="logo-box">
+                <div className="header__logo-box">
                     <Link to="/">
                         {/* <img src={logo} alt="logo" className="logo" /> */}
-                        <i className="fas fa-home fa-3x logo"></i>
+                        <i className="fas fa-home fa-3x header__logo"></i>
                     </Link>
                 </div>
                 <div className="text-box">
                     <h1 className="heading-primary">
-                        <span className="heading-primary-main">
+                        <span className="heading-primary--main">
                             Riot Nicolas
                         </span>
-                        <span className="heading-primary-secondary">
+                        <span className="heading-primary--secondary">
                             Création de contenu numérique
                         </span>
                     </h1>

@@ -1,14 +1,4 @@
-/*
-colors:
-#020024
-#12125c
-#1d93ab
-
- */
-
-$c-primary: #020024;
-$c-secondary:#12125c;
-$c-tertiary: #1d93ab;
+@import './variable';
 
 *,
 *::after,
