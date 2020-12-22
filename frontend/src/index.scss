@@ -23,3 +23,29 @@ body {
     color: rgb(8, 8, 8);
     box-sizing: border-box;
 }
+
+main {
+    background-color: $c-color-grey;
+    margin-top: -15vh;
+}
+
+//typo
+.heading-tertiary{
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+
+
+
+///utimity
+
+.u-center-text{
+    text-align: center;
+}
+
+.u-margin-bottom-8{
+    margin-bottom: 8rem;
+}
