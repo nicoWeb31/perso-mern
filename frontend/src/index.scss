@@ -1,4 +1,4 @@
-@import './variable';
+@import "./variable";
 
 *,
 *::after,
@@ -20,7 +20,7 @@ body {
     /* font-size:16 px; */
     /* font-size: 1.6 rem; */
     line-height: 1.7;
-    color: rgb(8, 8, 8);
+    color: $c-black;
     box-sizing: border-box;
 }
 
@@ -29,23 +29,78 @@ main {
     margin-top: -15vh;
 }
 
-//typo
-.heading-tertiary{
-    font-size: 1.6rem;
-    font-weight: 700;
-    text-transform: uppercase;
 
+//btn
+.btn-text{
+    &:link,
+    &:visited{
+        color: $c-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $c-primary;
+        padding:3px;
+        font-size: $default-font-size;
+        transition: all 0.2s;
+        border-radius:10%;
+
+    }
+
+    &:hover{
+        background-color: $c-secondary;
+        color: $c-white;
+        box-shadow: 0 2rem 3rem rgba($c-black, 0.35);
+        transform:translateY(-2px) 
+
+    }
+
+    &:active{
+        box-shadow: 0 1rem 1.5rem rgba($c-black, 0.35);
+        transform:translateY(0);
+    }
 }
 
 
+//typo
 
+.paragraph {
+    font-size: 1.5rem;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
 
 ///utimity
 
-.u-center-text{
+.u-center-text {
     text-align: center;
 }
 
-.u-margin-bottom-8{
+.u-padding-big {
+    padding: 8rem;
+}
+
+.u-padding-medium {
+    padding: 4rem;
+}
+
+.u-padding-small {
+    padding: 1.5rem;
+}
+
+.u-margin-bottom-small {
+    margin-bottom: 1.5rem;
+}
+.u-margin-bottom-medium {
+    margin-bottom: 8rem;
+}
+
+.u-margin-bottom-big {
     margin-bottom: 8rem;
 }
