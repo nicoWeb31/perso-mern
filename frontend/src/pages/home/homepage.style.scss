@@ -2,18 +2,21 @@
 
 .home {
     padding: 15rem 0;
-    background-color: bisque;
+    position: relative;
 }
+
+
 
 .presentation {
     width: 75%;
     margin: 3rem auto;
-    background-color: aliceblue;
+    background-color: rgba($c-white, 0.8);
     box-shadow: 0 3rem 6rem rgba($c-black, 0.3);
     border-radius: 3px;
     font-size: $default-font-size;
     padding: 9rem;
-    transform: skewX(-8deg);
+    transform: skewX(-4deg);
+
 
     // &>*{
     //     transform: skewX(8deg);
@@ -27,11 +30,12 @@
         shape-outside: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);
         -webkit-clip-path: circle(50% at 50% 50%);
-        transform: translateX(-4rem) skewX(8deg);
+        transform: translateX(-4rem) skewX(4deg);
     }
 
     &__img {
         width: 100%;
+        height: 100%;
     }
 
     &__text {

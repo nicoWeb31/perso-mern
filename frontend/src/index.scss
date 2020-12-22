@@ -25,41 +25,36 @@ body {
 }
 
 main {
-    background-color: $c-color-grey;
     margin-top: -15vh;
     height: auto;
 }
 
-
 //btn
-.btn-text{
+.btn-text {
     &:link,
-    &:visited{
+    &:visited {
         color: $c-primary;
         display: inline-block;
         text-decoration: none;
         border-bottom: 1px solid $c-primary;
-        padding:3px;
+        padding: 3px;
         font-size: $default-font-size;
         transition: all 0.2s;
-        border-radius:10%;
-
+        border-radius: 10%;
     }
 
-    &:hover{
+    &:hover {
         background-color: $c-secondary;
         color: $c-white;
         box-shadow: 0 2rem 3rem rgba($c-black, 0.35);
-        transform:translateY(-2px) 
-
+        transform: translateY(-2px);
     }
 
-    &:active{
+    &:active {
         box-shadow: 0 1rem 1.5rem rgba($c-black, 0.35);
-        transform:translateY(0);
+        transform: translateY(0);
     }
 }
-
 
 //typo
 
@@ -71,25 +66,24 @@ main {
     }
 }
 
-.heading-secondary{
-    
-        padding-top: 15vh;
-        font-size: 3.5rem;
-        text-transform: uppercase;
-        font-weight: 700;
-        background-image: linear-gradient(to right, $c-primary, $c-tertiary);
-        display: inline;
-        -webkit-background-clip: text;
-        color: transparent;
-        transition: all 0.2s;
-        letter-spacing: 1.5px;
-        display: inline-block;
+.heading-secondary {
+    padding-bottom: 8rem;
+    padding-top: 12rem;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $c-primary, $c-tertiary);
+    display: inline;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.2s;
+    letter-spacing: 1.5px;
+    display: inline-block;
 
-        &:hover {
-            transform: skewY(2deg) skewX(2deg) scale(1.1);
-            text-shadow: 0.5rem 1rem 2rem rgba($c-black, 0.5);
-        }
-    
+    &:hover {
+        transform: skewY(2deg) skewX(2deg) scale(1.1);
+        text-shadow: 0.5rem 1rem 2rem rgba($c-black, 0.5);
+    }
 }
 
 .heading-tertiary {
@@ -125,4 +119,21 @@ main {
 
 .u-margin-bottom-big {
     margin-bottom: 8rem;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.2;
+    overflow: hidden;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
 }
