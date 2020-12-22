@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./about.style.scss";
-import seo from '../../img/about/search-engine-optimization-586422_1920.jpg';
-import hand from '../../img/about/hand-3108158_1920.jpg';
-import app from '../../img/about/apps-2558373_1920.jpg';
-
+import seo from "../../img/about/search-engine-optimization-586422_1920.jpg";
+import hand from "../../img/about/hand-3108158_1920.jpg";
+import app from "../../img/about/apps-2558373_1920.jpg";
 
 const About = () => {
     return (
@@ -49,14 +48,23 @@ const About = () => {
                         plus...
                     </Link>
                 </div>
-                <div className="col-md-6 col-12 u-padding-horizontal-big">
+                <div className="col-md-6 col-12 u-padding-horizontal-big photoCol">
                     <div className="composition">
-                        <img src={seo} alt="seo" className="composition__photo compositon__photo--p1" />
-                        <img src={hand} alt="hand" className="composition__photo compositon__photo--p2" />
-                        <img src={app} alt="app" className="composition__photo compositon__photo--p3" />
-
-
-
+                        <img
+                            src={seo}
+                            alt="seo"
+                            className="composition__photo composition__photo--p1"
+                        />
+                        <img
+                            src={hand}
+                            alt="hand"
+                            className="composition__photo composition__photo--p2"
+                        />
+                        <img
+                            src={app}
+                            alt="app"
+                            className="composition__photo composition__photo--p3"
+                        />
                     </div>
                 </div>
             </div>
