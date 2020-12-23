@@ -5,11 +5,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import About from "./pages/about/About";
 import Service from "./pages/service/Service";
+import ButtonNav from "./components/buttonNav/ButtonNav";
+
 
 function App() {
     return (
         <Router>
             <div className="App">
+                <ButtonNav />
                 <Header />
 
                 <main className="main">
