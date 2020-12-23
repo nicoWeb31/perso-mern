@@ -38,7 +38,18 @@
         height: 100%;
     }
 
-    &__text {
-        transform: skewX(8deg);
+    // &__text {
+    //     // transform: skewX(8deg);
+    // }
+}
+
+
+@media (max-width:740px){
+
+    .presentation{
+        
+        transform: skewX(-0deg);
+        padding:1.5rem;
     }
+
 }

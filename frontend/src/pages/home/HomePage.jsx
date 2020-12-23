@@ -5,6 +5,8 @@ import code from "../../img/homeN/code.jpg";
 
 import bgVideo from "../../img/homeN/Laptop.mp4";
 import BaniereContact from "../../components/banniereContact/BaniereContact";
+import CompetenceService from "../../components/CometenceService/CompetenceService";
+
 
 const HomePage = () => {
     return (
@@ -91,6 +93,7 @@ const HomePage = () => {
             </div>
         </div>
         <BaniereContact/>
+        <CompetenceService/>
 
         </>
     );
