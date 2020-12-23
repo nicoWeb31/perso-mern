@@ -4,9 +4,11 @@ import me from "../../img/homeN/me.jpg";
 import code from "../../img/homeN/code.jpg";
 
 import bgVideo from "../../img/homeN/Laptop.mp4";
+import BaniereContact from "../../components/banniereContact/BaniereContact";
 
 const HomePage = () => {
     return (
+        <>
         <div className="home">
             <div className="bg-video">
                 <video className="bg-video__content" autoPlay muted loop>
@@ -88,6 +90,9 @@ const HomePage = () => {
                 </div>
             </div>
         </div>
+        <BaniereContact/>
+
+        </>
     );
 };
 

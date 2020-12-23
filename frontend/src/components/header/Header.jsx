@@ -23,10 +23,10 @@ const Header = () => {
                         </span>
                     </h1>
 
-                    <a href="#servives" className="btn btn-white btn-animated">
+                    <Link href="#servives" className="btn btn-white btn-animated">
                         {" "}
                         Mes Services
-                    </a>
+                    </Link>
                 </div>
             </header>
         </Router>
