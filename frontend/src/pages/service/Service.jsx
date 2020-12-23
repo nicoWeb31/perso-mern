@@ -1,9 +1,10 @@
 import React from 'react'
+import CompService from '../../components/compService/CompService'
 
 const Service = () => {
     return (
         <div>
-            Service
+            <CompService/>
         </div>
     )
 }
