@@ -14,6 +14,7 @@
         right: 6rem;
         border-radius: 50%;
         z-index: 3000;
+        box-shadow: 0 1rem 3rem rgba($c-black, 0.5);
     }
 
     &__background {
@@ -25,16 +26,19 @@
         right: 6.5rem;
         background-image: radial-gradient($c-secondary, $c-tertiary);
         z-index: 2000;
-        transform: scale(70);
+        //transform: scale(70);
     }
 
     &__nav {
         height: 100vh;
-        width: 100%;
+        // width: 100%;
         position: fixed;
         top: 0;
         right: 0;
         z-index: 2555;
+
+        opacity: 0;
+        width: 0;
     }
 
     &__list {
@@ -53,6 +57,7 @@
     &__link {
         &:link,
         &:visited {
+            display: inline-block;
             font-size: 3rem;
             font-weight: 300;
             color: $c-white;
@@ -68,7 +73,12 @@
         &:active{
             background-position: 100%;
             color: $c-primary;
+            transform:translateX(1rem)
         }
 
+    }
+
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
     }
 }

@@ -7,7 +7,7 @@ const ButtonNav = () => {
     return (
         <div>
             <input type="checkbox" className="navigation__checkbox" id="navi-toggle"/>
-            <label htmlFor="" className="navigation__button">Menu</label>
+            <label htmlFor="navi-toggle" className="navigation__button">Menu</label>
             <div className="navigation__background">
                 &nbsp;
             </div>
