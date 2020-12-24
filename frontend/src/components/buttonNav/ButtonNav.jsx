@@ -31,10 +31,10 @@ const ButtonNav = () => {
                         <Link to="/service" className="navigation__link" onClick={()=>setToggle(false)}> Service</Link>
                     </li>
                     <li className="navigation__item">
-                        <Link to="/" className="navigation__link" onClick={()=>setToggle(false)} > Contact</Link>
+                        <Link to="/contact" className="navigation__link" onClick={()=>setToggle(false)} > Contact</Link>
                     </li>
                     <li className="navigation__item">
-                        <Link to="/" className="navigation__link" onClick={()=>setToggle(false)}> A propos !</Link>
+                        <Link to="/about" className="navigation__link" onClick={()=>setToggle(false)}> A propos !</Link>
                     </li>
                 </ul>
             </nav>
