@@ -23,21 +23,5 @@ if (process.env.NODE_ENV !== "production") {
 
 //router server
 
-//production environment
-const __dirname = path.resolve();
-console.log("🚀 ~ file: app.js ~ line 28 ~ __dirname", __dirname)
-
-if (process.env.NODE_ENV === "production") {
-    console.log("production mode");
-    app.use(express.static(path.join(__dirname, "/frontend/build")));
-    app.get("*", (req, res) =>
-        res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-    );
-} else {
-    app.get("/", (req, res) => {
-        console.log("dev mode");
-        res.send("Api is runnig.....");
-    });
-}
 
 export default app;
