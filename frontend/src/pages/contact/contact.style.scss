@@ -1,1 +1,15 @@
-@import '../../variable'
+@import "../../variable";
+
+.contact {
+    background-color: $c-color-grey;
+padding-bottom: 10rem;
+}
+
+.formulaire {
+    background-image: url(../../img/contact.jpg);
+    background-size: 100%;
+    margin: 5rem 10rem;
+    height: 60rem;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 5rem rgba($c-black,0.9);
+}

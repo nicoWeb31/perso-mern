@@ -6,6 +6,7 @@ import HomePage from "./pages/home/HomePage";
 import About from "./pages/about/About";
 import Service from "./pages/service/Service";
 import ButtonNav from "./components/buttonNav/ButtonNav";
+import Contact from "./pages/contact/Contact";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                     <Route exact path="/" component={HomePage} />
                     <Route path="/about" component={About} />
                     <Route path='/service' component={Service} />
+                    <Route path="/contact" component={Contact} />
                 </main>
 
                 <Footer />
