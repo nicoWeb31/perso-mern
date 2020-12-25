@@ -6,7 +6,9 @@ padding-bottom: 10rem;
 }
 
 .formulaire {
-    background-image: url(../../img/contact.jpg);
+    // background-image: url(../../img/contact.jpg);
+    background-image:linear-gradient(105deg,rgba($c-white,0.8) 0%,rgba($c-white,0.9) 50% , transparent 50%),url(../../img/contact.jpg);
+
     background-size: 100%;
     margin: 5rem 10rem;
     height: 60rem;
