@@ -10,8 +10,8 @@ const Contact = () => {
             </div>
             <div className="formulaire">
                 <div className="formulaire__form">
-                    <h4>Laisser moi un message</h4>
-                    <form action="">
+                    <h4 className="heading-tertiary">Laisser moi un message</h4>
+                    <form action="" className="form">
                         <div className="form__group">
                             <label htmlFor="nom">Votre nom</label>
                             <input type="text" className="form__input" placeholder="votre nom" id="nom" required/>
@@ -24,7 +24,7 @@ const Contact = () => {
                             <label htmlFor="massage">Message</label>
                             {/* <input type="email" className="form__input" placeholder="votre nom" id="email" required/> 
                             */}
-                            <textarea name="" id="message" cols="30" rows="10"></textarea>
+                            <textarea name="" id="message" cols="30" rows="10" className="form__input"></textarea>
                         </div>
                     </form>
 
