@@ -17,7 +17,7 @@
 
     background-size: 100%;
     margin: 5rem 10rem;
-    height: 60rem;
+    height: 70rem;
     border-radius: 3px;
     box-shadow: 0 1.5rem 5rem rgba($c-black, 0.9);
 }
@@ -33,6 +33,7 @@
     &__input{
         font-size: 1.5rem;
         font-family: inherit;
+        color:inherit;
         padding: 1.5rem 2rem;
         border-radius:2px;
         background-color: rgba($c-white, 0.8);
@@ -41,20 +42,28 @@
         width: 90%;
         display: block;
 
+        &::-webkit-input-placeholder{
+            color: $c-color-grey-dark;
+        }
 
+        &:focus:invalid{
+            border-bottom : 3px solid $c-danger;
+        }
+
+        &:focus{
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($c-black, 0.1);
+            border-bottom : 3px solid $c-success;
+        }
     }
 
-    &::-webkit-input-placeholder{
-        color: r
-    }
 
-    &__input:focus{
-        outline: none;
-        box-shadow: 0 1rem 2rem rgba($c-black, 0.1);
-        border-bottom : 3px solid $c-secondary;
-    }
 
     &__label{
-
+        font-style: 1.3rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
     }
 }

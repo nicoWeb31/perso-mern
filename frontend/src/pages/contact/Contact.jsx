@@ -13,15 +13,15 @@ const Contact = () => {
                     <h4 className="heading-tertiary">Laisser moi un message</h4>
                     <form action="" className="form">
                         <div className="form__group">
-                            <label htmlFor="nom">Votre nom</label>
+                            <label htmlFor="nom" className="form__label">Votre nom</label>
                             <input type="text" className="form__input" placeholder="votre nom" id="nom" required/>
                         </div>
                         <div className="form__group">
-                            <label htmlFor="email">Votre mail</label>
+                            <label htmlFor="email" className="form__label">Votre mail</label>
                             <input type="email" className="form__input" placeholder="votre nom" id="email" required/>
                         </div>
                         <div className="form__group">
-                            <label htmlFor="massage">Message</label>
+                            <label htmlFor="massage" className="form__label">Message</label>
                             {/* <input type="email" className="form__input" placeholder="votre nom" id="email" required/> 
                             */}
                             <textarea name="" id="message" cols="30" rows="10" className="form__input"></textarea>
