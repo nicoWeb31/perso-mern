@@ -1,15 +1,13 @@
 import React from "react";
 import "./header.style.scss";
-// import logo from "../../img/logo.png";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <Router>
+
             <header className="header">
                 <div className="header__logo-box">
                     <Link to="/">
-                        {/* <img src={logo} alt="logo" className="logo" /> */}
                         <i className="fas fa-home fa-3x header__logo"></i>
                     </Link>
                 </div>
@@ -23,13 +21,13 @@ const Header = () => {
                         </span>
                     </h1>
 
-                    <Link href="#servives" className="btn btn-white btn-animated">
+                    <Link to='/service' className="btn btn-white btn-animated">
                         {" "}
                         Mes Services
                     </Link>
                 </div>
             </header>
-        </Router>
+
     );
 };
 
