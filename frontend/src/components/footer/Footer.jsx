@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="row">
-                <div className="col-12 col-md-6 col-xl-4  footer__col1">
+                <div className="col-12 col-md-12 col-xl-4  footer__col1">
                     <div className="footer__logo-box">
                         <i className="fas fa-laptop-code fa-4x footer__logo"></i>
                     </div>
@@ -36,7 +36,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-12 col-md-6 col-xl-4 ">
+                <div className="col-12 col-md-12 col-xl-4 ">
                     <div className="footer__contact">
                         <div className="footer__contact--adress ">
                             <i class="fa fa-map-marker footer__icone" ></i>
@@ -58,7 +58,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-12 col-md-6 col-xl-4 ">
+                <div className="col-12 col-md-12 col-xl-4 ">
 
                     <div className="footer__iconeReseau d-flex ">
                     <Link to='/' className="footer__link"><i className="fab fa-linkedin-in fa-3x"></i></Link>
@@ -67,7 +67,7 @@ const Footer = () => {
 
                     <p className="footer__copyright">
                         N'hesitez pas a me <Link to='/contact' className="footer__link"> contacter .</Link>
-                        Copyright &copy; by Riot Nicolas 2020
+                        Copyright &copy; by Riot Nicolas 2020.
                     </p>
                 </div>
             </div>
