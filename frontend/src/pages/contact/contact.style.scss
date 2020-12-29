@@ -1,5 +1,6 @@
 @import "../../variable";
 
+
 .contact {
     background-color: $c-color-grey;
     padding-bottom: 10rem;
@@ -17,9 +18,17 @@
 
     background-size: 100%;
     margin: 5rem 10rem;
-    height: 70rem;
+    height: 80rem;
     border-radius: 3px;
     box-shadow: 0 1.5rem 5rem rgba($c-black, 0.9);
+
+    h4 {
+        padding-left: 10rem;
+        padding-top: 5rem;
+        font-size: $default-font-size;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
 }
 
 .form {
@@ -70,5 +79,32 @@
         opacity: 0;
         visibility: hidden;
         transform: translateY(-4rem);
+    }
+}
+
+
+//btn
+.btn-submit {
+    
+        color: $c-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $c-primary;
+        padding: 5px;
+        font-size: $default-font-size;
+        transition: all 0.2s;
+        border-radius: 10%;
+    
+
+    &:hover {
+        background-color: $c-secondary;
+        color: $c-white;
+        box-shadow: 0 2rem 3rem rgba($c-black, 0.35);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 1rem 1.5rem rgba($c-black, 0.35);
+        transform: translateY(0);
     }
 }

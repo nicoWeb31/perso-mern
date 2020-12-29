@@ -44,7 +44,7 @@ const About = () => {
                     </p>
 
                     <Link to="/sevice" className="btn-text">
-                        <i class="fas fa-arrow-right"></i>
+                        <i className="fas fa-arrow-right"></i>
                         plus...
                     </Link>
                 </div>

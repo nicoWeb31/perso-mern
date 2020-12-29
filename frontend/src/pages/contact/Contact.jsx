@@ -10,7 +10,7 @@ const Contact = () => {
             </div>
             <div className="formulaire">
                 <div className="formulaire__form">
-                    <h4 className="heading-tertiary">Laisser moi un message</h4>
+                    <h4>Laisser moi un message</h4>
                     <form action="" className="form">
                         <div className="form__group">
                             <input type="text" className="form__input" placeholder="votre nom" id="nom" required/>
@@ -26,6 +26,12 @@ const Contact = () => {
                             {/* <input type="email" className="form__input" placeholder="votre nom" id="email" required/> 
                             */}
                         </div>
+
+                        <button className="btn-submit" type="submit">
+                        <i className="fas fa-arrow-right"></i>
+                            envoyer
+                            
+                        </button>
                     </form>
 
                 </div>
