@@ -108,3 +108,10 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width:900px){
+    .form {
+        width: 100%;
+        padding: 4rem;
+    }    
+}
