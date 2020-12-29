@@ -1,4 +1,5 @@
 @import "../../variable";
+@import '../../mixin';
 
 .footer {
     background-color: $c-black;
@@ -19,7 +20,7 @@
         list-style: none;
         display: flex;
         justify-content: space-between;
-        padding: 0 10rem; 
+        // padding: 0 10rem; 
     }
     
 
@@ -96,3 +97,7 @@
         padding-top: 2rem;
     }
 }
+
+.footer__contact--phone,.footer__contact--mail,.footer__contact--adress{
+    @include flexCenter();
+} 
