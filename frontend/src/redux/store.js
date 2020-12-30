@@ -1,8 +1,8 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import { thunk } from "redux-thunk";
+import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import messageReducer from './reducer/messageReducer'
+import {messageReducer} from './reducer/messageReducer'
 
 const reducer = combineReducers({
     messages: messageReducer
