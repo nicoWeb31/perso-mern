@@ -14,6 +14,9 @@ app.use((req, res, next) => {
     next();
 });
 
+//parser 
+app.use(express.json({ limit: "10kb" }));
+
 // const __dirname = path.resolve();
 // app.use('/images',express.static(__dirname + '/images/'))
 
