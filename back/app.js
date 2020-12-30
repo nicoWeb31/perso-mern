@@ -1,8 +1,9 @@
 //express server
 import express from "express";
-import path from "path";
 const app = express();
 import morgan from "morgan";
+import routerMessage from './routes/messageRoutes.js'
+
 
 // import path from 'path';
 
@@ -22,6 +23,8 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 //router server
+app.use('/api/v1/messages',routerMessage)
+
 
 
 export default app;
