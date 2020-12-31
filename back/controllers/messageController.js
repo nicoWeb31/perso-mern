@@ -1,11 +1,12 @@
-import Message from "../models/messageModel.js"
+import Message from "../models/messageModel.js";
+import {catchAsync} from '../utils/catchAsync.js'
 
 
 //@desc create  a new message
 //@route post /api//v1/messages
 //@access Public
 //_____________________create message___________________________________________
-const createMessage = async (req,res,next) =>{
+const createMessage = catchAsync(async (req,res,next) =>{
 
     console.log(req.body)
     const newMessage = await Message.create(req.body)
@@ -14,7 +15,7 @@ const createMessage = async (req,res,next) =>{
         status: "success",
         message: newMessage
     })
-}
+})
 
 
 
