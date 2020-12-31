@@ -2,7 +2,9 @@
 import express from "express";
 const app = express();
 import morgan from "morgan";
-import routerMessage from './routes/messageRoutes.js'
+import routerMessage from './routes/messageRoutes.js';
+import AppError from './utils/appError.js';
+import {errorHandler} from './controllers/errorController.js'
 
 
 // import path from 'path';
@@ -25,33 +27,16 @@ if (process.env.NODE_ENV !== "production") {
     app.use(morgan("dev"));
 }
 
-//router server
+//router server________________________________________________________________________
 app.use('/api/v1/messages',routerMessage)
+
+//error route__________________________________________________________________________
 app.all('*',(req,res, next)=>{
-    // res.status(404).json({
-    //     status: 'fail',
-    //     message: `can't find ${req.originalUrl} on this server !!!`
-    // })
-
-
-    const err = new Error(`can't find ${req.originalUrl} on this server !!!`)
-    err.status = 'fail';
-    err.statusCode = 404;
-
-    next(err);
+    next(new AppError(`Can't find ${req.originalUrl} on this server!!!!!`, 404));
 })
+app.use(errorHandler)
 
 
-//error handler----4 argument node reconize   an errhandling middlerware
-app.use((err, req, res,next) =>{
 
-    err.statusCode = err.statusCode || 500;
-    err.status = err.status || 'error';
-
-    res.status(err.statusCode).json({
-        status: err.status,
-        messages: err.message
-    })
-})
 
 export default app;
