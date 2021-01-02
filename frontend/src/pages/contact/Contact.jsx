@@ -13,6 +13,7 @@ const Contact = ({history}) => {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [message,setMessage] = useState('');
+    const [successMess, setSuccessMess] = useState("Votre message a été envoyer avec success!  j'y repondrai des que possible ! merci");
     
 
 
@@ -25,7 +26,8 @@ const Contact = ({history}) => {
         if(success){
             history.push('/contact')
         }
-    },[success,history]);
+
+    },[history,success]);
 
 
     //_________________________________fonction______________________________________
@@ -46,7 +48,7 @@ const Contact = ({history}) => {
             <div className="spin">
                 {loading && <Spinner message="" />}
                 {error && <Alert>{error}</Alert>} 
-                {success && <Alert variant="success">Votre message a été envoyer avec success!  j'y repondrai des que possible ! merci"</Alert>} 
+                {success && <Alert variant="success">{successMess}</Alert>} 
 
             </div>
 
@@ -56,6 +58,7 @@ const Contact = ({history}) => {
                     <form onSubmit={onHandleSubmit} className="form">
                         <div className="form__group">
                             <input
+                                
                                 type="text"
                                 className="form__input"
                                 placeholder="votre nom"
