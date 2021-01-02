@@ -11,6 +11,7 @@ export const messageReducer = (state = {}, action) => {
                 loading: true,
             };
         case CREATE_MESSAGE_SUCCESS:
+            console.log(action.payload)
             return {
                 loading: false,
                 success: true,

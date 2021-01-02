@@ -15,11 +15,7 @@ export const createMessage = (message) => async (dispatch) => {
             },
         };
 
-        const { data } = axios.post(
-            "http://localhost:3005/api/v1/",
-            message,
-            config
-        );
+        const {data} = await axios.post("/api/v1/messages", message, config);
         dispatch({ type: CREATE_MESSAGE_SUCCESS, payload: data.message });
     } catch (error) {
         dispatch({ type: CREATE_MESSAGE_FAIL,payload:error.response && error.data.message ? error.data.message : error.message});
