@@ -99,7 +99,7 @@
 .footer__contact--phone,
 .footer__contact--mail,
 .footer__contact--adress {
-    @include flexCenter();
+    @include flexCenter(row);
 }
 
 @media (max-width: 840px) {
