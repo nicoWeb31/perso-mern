@@ -18,6 +18,6 @@ export const createMessage = (message) => async (dispatch) => {
         const {data} = await axios.post("/api/v1/messages", message, config);
         dispatch({ type: CREATE_MESSAGE_SUCCESS, payload: data.message });
     } catch (error) {
-        dispatch({ type: CREATE_MESSAGE_FAIL,payload:error.response && error.data.message ? error.data.message : error.message});
+        dispatch({ type: CREATE_MESSAGE_FAIL,payload:error.response && error.response.data.messages ? error.response.data.messages : error.messages});
     }
 };

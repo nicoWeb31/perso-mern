@@ -19,6 +19,7 @@ export const messageReducer = (state = {}, action) => {
             };
 
         case CREATE_MESSAGE_FAIL:
+            console.log(action.payload)
             return {
                 loading: false,
                 error: action.payload,
