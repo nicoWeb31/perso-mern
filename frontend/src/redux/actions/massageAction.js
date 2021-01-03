@@ -11,7 +11,7 @@ export const createMessage = (message) => async (dispatch) => {
 
         const config = {
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/jsonx",
             },
         };
 

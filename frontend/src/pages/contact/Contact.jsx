@@ -47,7 +47,7 @@ const Contact = ({history}) => {
             </div>
             <div className="spin">
                 {loading && <Spinner message="" />}
-                {error && <Alert>{error}</Alert>} 
+                {error && <Alert variant='danger'>{error}</Alert>} 
                 {success && <Alert variant="success">{successMess}</Alert>} 
 
             </div>
