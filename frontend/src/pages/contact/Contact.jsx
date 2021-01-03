@@ -7,10 +7,10 @@ import { Field, reduxForm } from "redux-form";
 
 import "./contact.style.scss";
 
-const Contact = ({ history }) => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+const Contact = ({ history, handleSubmit}) => {
+    // const [name, setName] = useState("");
+    // const [email, setEmail] = useState("");
+    // const [message, setMessage] = useState("");
     const [successMess, setSuccessMess] = useState(
         "Votre message a été envoyer avec success!  j'y repondrai des que possible ! merci"
     );
@@ -71,14 +71,14 @@ const Contact = ({ history }) => {
     };
 
     //_________________________________fonction______________________________________
-    const onHandleSubmit = (e) => {
-        e.preventDefault();
-        const data = { name, email, message };
-        console.log(data);
+    const onHandleSubmit = (formValue) => {
+    console.log("🚀 ~ file: Contact.jsx ~ line 75 ~ onHandleSubmit ~ formValue", formValue)
+        // e.preventDefault();
+
+        const data = { name: formValue.name, email: formValue.email, message: formValue.message };
+
         dispatch(createMessage(data));
-        setName("");
-        setMessage("");
-        setEmail("");
+
     };
     return (
         <div className="contact">
@@ -94,7 +94,7 @@ const Contact = ({ history }) => {
             <div className="formulaire">
                 <div className="formulaire__form">
                     <h4>Laisser moi un message</h4>
-                    <form onSubmit={onHandleSubmit} className="form">
+                    <form onSubmit={handleSubmit(onHandleSubmit)} className="form">
                         <Field
                             name="name"
                             component={renderInput}
