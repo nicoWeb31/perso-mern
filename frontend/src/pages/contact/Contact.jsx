@@ -7,10 +7,7 @@ import { Field, reduxForm } from "redux-form";
 
 import "./contact.style.scss";
 
-const Contact = ({ history, handleSubmit}) => {
-    // const [name, setName] = useState("");
-    // const [email, setEmail] = useState("");
-    // const [message, setMessage] = useState("");
+const Contact = ({ history, handleSubmit }) => {
     const [successMess, setSuccessMess] = useState(
         "Votre message a été envoyer avec success!  j'y repondrai des que possible ! merci"
     );
@@ -19,6 +16,9 @@ const Contact = ({ history, handleSubmit}) => {
 
     const newMessage = useSelector((state) => state.messages);
     const { loading, error, success } = newMessage;
+
+    // const form = useSelector((state) => state.form);
+
 
     useEffect(() => {
         if (success) {
@@ -29,56 +29,56 @@ const Contact = ({ history, handleSubmit}) => {
     //_________________________________render input______________________________________
 
     const renderInput = (formProps) => {
+    console.log("🚀 ~ file: Contact.jsx ~ line 29 ~ renderInput ~ formProps", formProps.meta)
         return (
             <div className="form__group">
                 <input
                     {...formProps.input}
-                    // type="text"
                     className="form__input"
-                    placeholder="votre nom"
-                    // value={formProps.input.value}
-                    // name="name"
-                    // onChange={formProps.input.onChange}
-                    // id="nom"
-                    // required
+                    placeholder={formProps.placeholder}
                 />
                 <label htmlFor="nom" className="form__label">
                     {formProps.label}
                 </label>
+                <small>{formProps.meta.error}</small>
             </div>
         );
     };
 
     const renderTextarea = (formProps) => {
-        return(
-        <div className="form__group">
-            <textarea
-                name="message"
-                value={formProps.input.value}
-                onChange={formProps.input.onChange}
-                id="message"
-                cols="30"u
-                rows="10"
-                className="form__input"
-                placeholder="votre message"
-            ></textarea>
-            <label htmlFor="massage" className="form__label">
-                {formProps.label}
-            </label>
-        </div>
+        return (
+            <div className="form__group">
+                <textarea
+                    name="message"
+                    value={formProps.input.value}
+                    onChange={formProps.input.onChange}
+                    id="message"
+                    cols="30"
+                    rows="10"
+                    className="form__input"
+                    placeholder="votre message"
+                ></textarea>
+                <label htmlFor="massage" className="form__label">
+                    {formProps.label}
+                </label>
+                <small>{formProps.meta.error}</small>
 
-        )
+            </div>
+        );
     };
 
     //_________________________________fonction______________________________________
     const onHandleSubmit = (formValue) => {
-    console.log("🚀 ~ file: Contact.jsx ~ line 75 ~ onHandleSubmit ~ formValue", formValue)
-        // e.preventDefault();
-
-        const data = { name: formValue.name, email: formValue.email, message: formValue.message };
-
+        console.log(
+            "🚀 ~ file: Contact.jsx ~ line 75 ~ onHandleSubmit ~ formValue",
+            formValue
+        );
+        const data = {
+            name: formValue.name,
+            email: formValue.email,
+            message: formValue.message,
+        };
         dispatch(createMessage(data));
-
     };
     return (
         <div className="contact">
@@ -87,27 +87,36 @@ const Contact = ({ history, handleSubmit}) => {
             </div>
             <div className="spin">
                 {loading && <Spinner message="" />}
-                {error && <Alert variant="danger">{error}</Alert>}
+                {/* {error && <Alert variant="danger">{error}</Alert>} */}
                 {success && <Alert variant="success">{successMess}</Alert>}
             </div>
 
             <div className="formulaire">
                 <div className="formulaire__form">
                     <h4>Laisser moi un message</h4>
-                    <form onSubmit={handleSubmit(onHandleSubmit)} className="form">
+                    <form
+                        onSubmit={handleSubmit(onHandleSubmit)}
+                        className="form"
+                    >
                         <Field
                             name="name"
                             component={renderInput}
                             label="Votre nom ?"
+                            placeholder="votre nom?"
                         />
 
                         <Field
                             name="email"
                             component={renderInput}
                             label="Votre mail ?"
+                            placeholder="votre email?"
                         />
-                        
-                        <Field name="message" component={renderTextarea} label="Votre Message ?"/>
+
+                        <Field
+                            name="message"
+                            component={renderTextarea}
+                            label="Votre Message ?"
+                        />
 
                         <button className="btn-submit" type="submit">
                             <i className="fas fa-arrow-right"></i>
@@ -120,6 +129,25 @@ const Contact = ({ history, handleSubmit}) => {
     );
 };
 
+const validate = (formValues) => {
+    const errors = {};
+    if (!formValues.name) {
+        //only ran if user did not enter a name
+        errors.name = "vous devez entrer un nom !";
+    }
+    if (!formValues.email) {
+        //only ran if user did not enter a name
+        errors.email = "vous devez entrer votre mail !";
+    }
+    if (!formValues.message) {
+        //only ran if user did not enter a name
+        errors.message = "vous devez entrer un message !";
+    }
+
+    return errors;
+};
+
 export default reduxForm({
     form: "messageForm",
+    validate
 })(Contact);
