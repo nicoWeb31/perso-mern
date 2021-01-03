@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import {useSelector, useDispatch} from 'react-redux'
 import Spinner from "../../components/spinner/Spinner";
 import Alert from '../../components/alert/Alert';
-import { createMessage } from '../../redux/actions/massageAction'
-
+import { createMessage } from '../../redux/actions/massageAction';
+import {Field, reduxForm} from 'redux-form';
 
 import "./contact.style.scss";
 
@@ -116,4 +116,10 @@ const Contact = ({history}) => {
     );
 };
 
-export default Contact;
+
+
+
+
+export default reduxForm({
+    form: 'messageForm'
+})(Contact);
