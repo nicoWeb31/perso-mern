@@ -29,7 +29,7 @@ const Contact = ({ history, handleSubmit }) => {
 
     const renderError = (meta) => {
         if (meta.error && meta.touched) {
-            return <small>toto{meta.error}</small>;
+            return <small className="errorMess">{meta.error}</small>;
         }
     };
 
@@ -43,7 +43,7 @@ const Contact = ({ history, handleSubmit }) => {
                 <input
                     {...formProps.input}
                     autoComplete="off"
-                    className="form__input"
+                    className={`${formProps.meta.touched ? formProps.meta.error ? 'inpuTError' : 'inputOK' : ''}  form__input `}
                     placeholder={formProps.placeholder}
                 />
                 <label htmlFor="nom" className="form__label">
@@ -55,16 +55,19 @@ const Contact = ({ history, handleSubmit }) => {
     };
 
     const renderTextarea = (formProps) => {
+    console.log("🚀 ~ file: Contact.jsx ~ line 58 ~ renderTextarea ~ formProps", formProps.meta)
         return (
             <div className="form__group">
                 <textarea
                     name="message"
+                    autoComplete="off"
                     value={formProps.input.value}
                     onChange={formProps.input.onChange}
                     id="message"
                     cols="30"
                     rows="10"
-                    className="form__input"
+                    className={`${formProps.meta.touched ? formProps.meta.error ? 'inpuTError' : 'inputOK' : ''}  form__input `}
+
                     placeholder="votre message"
                 ></textarea>
                 <label htmlFor="massage" className="form__label">

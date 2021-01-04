@@ -1,6 +1,5 @@
 @import "../../variable";
 
-
 .contact {
     background-color: $c-color-grey;
     padding-bottom: 10rem;
@@ -43,7 +42,7 @@
         font-size: 1.5rem;
         font-family: inherit;
         color: inherit;
-        padding: 1.5rem 2rem;
+        padding: 1.3rem 2rem;
         border-radius: 2px;
         background-color: rgba($c-white, 0.8);
         border: none;
@@ -64,8 +63,6 @@
             box-shadow: 0 1rem 2rem rgba($c-black, 0.1);
             border-bottom: 3px solid $c-success;
         }
-
-        
     }
     &__label {
         font-style: 1.3rem;
@@ -82,19 +79,28 @@
     }
 }
 
+.inpuTError {
+    background-color: $c-danger-l;
+    transition: all 0.5;
+
+}
+
+.inputOK {
+    background-color: $c-success-l;
+    transition: all 0.5;
+
+}
 
 //btn
 .btn-submit {
-    
-        color: $c-primary;
-        display: inline-block;
-        text-decoration: none;
-        border-bottom: 1px solid $c-primary;
-        padding: 5px;
-        font-size: $default-font-size;
-        transition: all 0.2s;
-        border-radius: 10%;
-    
+    color: $c-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $c-primary;
+    padding: 5px;
+    font-size: $default-font-size;
+    transition: all 0.2s;
+    border-radius: 10%;
 
     &:hover {
         background-color: $c-secondary;
@@ -108,11 +114,17 @@
         transform: translateY(0);
     }
 }
-.spin{
+.spin {
     margin: 0 auto;
 }
 
-@media (max-width:900px){
+.errorMess {
+    padding-top: 0.5rem;
+    font-size: 1.3rem;
+    color: rgb(133, 45, 45);
+}
+
+@media (max-width: 900px) {
     .form {
         width: 100%;
         padding: 4rem;
