@@ -6,9 +6,72 @@ import { createMessage } from "../../redux/actions/massageAction";
 import { Field, reduxForm } from "redux-form";
 
 import "./contact.style.scss";
+//_________________________________render input______________________________________
+
+const renderError = (meta) => {
+    if (meta.error && meta.touched) {
+        return <small className="errorMess">{meta.error}</small>;
+    }
+};
+
+const renderInput = (formProps) => {
+    // console.log(
+    //     "🚀 ~ file: Contact.jsx ~ line 29 ~ renderInput ~ formProps",
+    //     formProps.meta
+    // );
+    return (
+        <div className="form__group">
+            <input
+                {...formProps.input}
+                autoComplete="off"
+                className={`${
+                    formProps.meta.touched
+                        ? formProps.meta.error
+                            ? "inpuTError"
+                            : "inputOK"
+                        : ""
+                }  form__input `}
+                placeholder={formProps.placeholder}
+            />
+            <label htmlFor="nom" className="form__label">
+                {formProps.label}
+            </label>
+            {renderError(formProps.meta)}
+        </div>
+    );
+};
+
+const renderTextarea = (formProps) => {
+    console.log("🚀 ~ file: Contact.jsx ~ line 58 ~ renderTextarea ~ formProps", formProps.meta)
+    return (
+        <div className="form__group">
+            <textarea
+                name="message"
+                {...formProps.input}
+                autoComplete="off"
+                value={formProps.input.value}
+                onChange={formProps.input.onChange}
+                id="message"
+                cols="30"
+                rows="10"
+                className={`${
+                    formProps.meta.touched
+                        ? formProps.meta.error
+                            ? "inpuTError"
+                            : "inputOK"
+                        : ""
+                }  form__input `}
+                placeholder="votre message..."
+            ></textarea>
+            <label htmlFor="massage" className="form__label">
+                {formProps.label}
+            </label>
+            {renderError(formProps.meta)}
+        </div>
+    );
+};
 
 const Contact = ({ history, handleSubmit }) => {
-    const [name,setName] = useState('')
     const [successMess, setSuccessMess] = useState(
         "Votre message a été envoyer avec success!  j'y repondrai des que possible ! merci"
     );
@@ -25,59 +88,6 @@ const Contact = ({ history, handleSubmit }) => {
             history.push("/contact");
         }
     }, [history, success]);
-
-    //_________________________________render input______________________________________
-
-    const renderError = (meta) => {
-        if (meta.error && meta.touched) {
-            return <small className="errorMess">{meta.error}</small>;
-        }
-    };
-
-    const renderInput = (formProps) => {
-        // console.log(
-        //     "🚀 ~ file: Contact.jsx ~ line 29 ~ renderInput ~ formProps",
-        //     formProps.meta
-        // );
-        return (
-            <div className="form__group">
-                <input
-                    {...formProps.input}
-                    autoComplete="off"
-                    className={`${formProps.meta.touched ? formProps.meta.error ? 'inpuTError' : 'inputOK' : ''}  form__input `}
-                    placeholder={formProps.placeholder}
-                />
-                <label htmlFor="nom" className="form__label">
-                    {formProps.label}
-                </label>
-                {renderError(formProps.meta)}
-            </div>
-        );
-    };
-
-    const renderTextarea = (formProps) => {
-    // console.log("🚀 ~ file: Contact.jsx ~ line 58 ~ renderTextarea ~ formProps", formProps.meta)
-        return (
-            <div className="form__group">
-                <textarea
-                    name="message"
-                    autoComplete="off"
-                    value={formProps.input.value}
-                    onChange={formProps.input.onChange}
-                    id="message"
-                    cols="30"
-                    rows="10"
-                    className={`${formProps.meta.touched ? formProps.meta.error ? 'inpuTError' : 'inputOK' : ''}  form__input `}
-                    
-                    placeholder="votre message"
-                ></textarea>
-                <label htmlFor="massage" className="form__label">
-                    {formProps.label}
-                </label>
-                {renderError(formProps.meta)}
-            </div>
-        );
-    };
 
     //_________________________________fonction______________________________________
     const onHandleSubmit = (formValue) => {
@@ -113,21 +123,21 @@ const Contact = ({ history, handleSubmit }) => {
                         <Field
                             name="name"
                             component={renderInput}
-                            label="Votre nom ?"
-                            placeholder="votre nom?"
+                            label="Votre nom !"
+                            placeholder="votre nom..."
                         />
 
                         <Field
                             name="email"
                             component={renderInput}
-                            label="Votre mail ?"
-                            placeholder="votre email?"
+                            label="Votre mail !"
+                            placeholder="votre email..."
                         />
 
                         <Field
                             name="message"
                             component={renderTextarea}
-                            label="Votre Message ?"
+                            label="Votre Message !"
                         />
 
                         <button className="btn-submit" type="submit">
