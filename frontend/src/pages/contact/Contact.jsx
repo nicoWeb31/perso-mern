@@ -19,7 +19,6 @@ const Contact = ({ history, handleSubmit }) => {
 
     // const form = useSelector((state) => state.form);
 
-
     useEffect(() => {
         if (success) {
             history.push("/contact");
@@ -28,19 +27,29 @@ const Contact = ({ history, handleSubmit }) => {
 
     //_________________________________render input______________________________________
 
+    const renderError = (meta) => {
+        if (meta.error && meta.touched) {
+            return <small>toto{meta.error}</small>;
+        }
+    };
+
     const renderInput = (formProps) => {
-    console.log("🚀 ~ file: Contact.jsx ~ line 29 ~ renderInput ~ formProps", formProps.meta)
+        console.log(
+            "🚀 ~ file: Contact.jsx ~ line 29 ~ renderInput ~ formProps",
+            formProps.meta
+        );
         return (
             <div className="form__group">
                 <input
                     {...formProps.input}
+                    autoComplete="off"
                     className="form__input"
                     placeholder={formProps.placeholder}
                 />
                 <label htmlFor="nom" className="form__label">
                     {formProps.label}
                 </label>
-                <small>{formProps.meta.error}</small>
+                {renderError(formProps.meta)}
             </div>
         );
     };
@@ -61,8 +70,7 @@ const Contact = ({ history, handleSubmit }) => {
                 <label htmlFor="massage" className="form__label">
                     {formProps.label}
                 </label>
-                <small>{formProps.meta.error}</small>
-
+                {renderError(formProps.meta)}
             </div>
         );
     };
@@ -135,10 +143,19 @@ const validate = (formValues) => {
         //only ran if user did not enter a name
         errors.name = "vous devez entrer un nom !";
     }
+
+    if (
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+            formValues.email
+        ) !== true
+    ) {
+        errors.email = "votre adresse email a un problémes !!!";
+    }
     if (!formValues.email) {
         //only ran if user did not enter a name
         errors.email = "vous devez entrer votre mail !";
     }
+
     if (!formValues.message) {
         //only ran if user did not enter a name
         errors.message = "vous devez entrer un message !";
@@ -149,5 +166,5 @@ const validate = (formValues) => {
 
 export default reduxForm({
     form: "messageForm",
-    validate
+    validate,
 })(Contact);
