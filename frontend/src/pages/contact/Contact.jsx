@@ -8,6 +8,7 @@ import { Field, reduxForm } from "redux-form";
 import "./contact.style.scss";
 
 const Contact = ({ history, handleSubmit }) => {
+    const [name,setName] = useState('')
     const [successMess, setSuccessMess] = useState(
         "Votre message a été envoyer avec success!  j'y repondrai des que possible ! merci"
     );
@@ -15,7 +16,7 @@ const Contact = ({ history, handleSubmit }) => {
     const dispatch = useDispatch();
 
     const newMessage = useSelector((state) => state.messages);
-    const { loading, error, success } = newMessage;
+    const { loading, success } = newMessage;
 
     // const form = useSelector((state) => state.form);
 
@@ -34,10 +35,10 @@ const Contact = ({ history, handleSubmit }) => {
     };
 
     const renderInput = (formProps) => {
-        console.log(
-            "🚀 ~ file: Contact.jsx ~ line 29 ~ renderInput ~ formProps",
-            formProps.meta
-        );
+        // console.log(
+        //     "🚀 ~ file: Contact.jsx ~ line 29 ~ renderInput ~ formProps",
+        //     formProps.meta
+        // );
         return (
             <div className="form__group">
                 <input
@@ -55,7 +56,7 @@ const Contact = ({ history, handleSubmit }) => {
     };
 
     const renderTextarea = (formProps) => {
-    console.log("🚀 ~ file: Contact.jsx ~ line 58 ~ renderTextarea ~ formProps", formProps.meta)
+    // console.log("🚀 ~ file: Contact.jsx ~ line 58 ~ renderTextarea ~ formProps", formProps.meta)
         return (
             <div className="form__group">
                 <textarea
@@ -67,7 +68,7 @@ const Contact = ({ history, handleSubmit }) => {
                     cols="30"
                     rows="10"
                     className={`${formProps.meta.touched ? formProps.meta.error ? 'inpuTError' : 'inputOK' : ''}  form__input `}
-
+                    
                     placeholder="votre message"
                 ></textarea>
                 <label htmlFor="massage" className="form__label">
